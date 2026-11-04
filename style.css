@@ -1475,6 +1475,294 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
+   12b. CERTIFICADOS — GRUPOS, GALERÍA Y LIGHTBOX
+   -------------------------------------------------------------------------- */
+
+/* Separador de grupos dentro de la sección de credenciales */
+.certs-group-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 44px 0 20px;
+}
+.section-head + .certs-group-head {
+  margin-top: 6px;
+}
+.group-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.group-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-2), transparent);
+}
+.group-desc {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+/* Galería de certificados (participación en cursos y eventos) */
+.certs-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cert-thumb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 14px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow-md);
+  cursor: zoom-in;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+.cert-thumb:hover,
+.cert-thumb:focus-visible {
+  transform: translateY(-6px);
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-red);
+  outline: none;
+}
+
+/* Área de imagen apaisada para documentos tipo certificado */
+.cert-thumb .cert-img-wrap {
+  aspect-ratio: 16 / 10;
+  margin-bottom: 14px;
+}
+.cert-thumb .cert-img {
+  width: 92%;
+  height: 92%;
+}
+
+/* Lupa que aparece al pasar el cursor */
+.cert-zoom {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(10, 10, 11, 0.72);
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.cert-zoom svg {
+  width: 16px;
+  height: 16px;
+}
+.cert-thumb:hover .cert-zoom,
+.cert-thumb:focus-visible .cert-zoom {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cert-thumb-title {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.cert-thumb-issuer {
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  color: var(--text-3);
+}
+
+/* ---------- Lightbox (visor a pantalla completa) ---------- */
+body.lb-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.lb-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 6, 0.86);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.lb-box {
+  position: relative;
+  width: min(960px, 100%);
+  max-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+}
+
+.lb-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.lb-counter {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--text-2);
+}
+
+.lb-close,
+.lb-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-2);
+  background: var(--glass);
+  color: var(--text);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+.lb-close {
+  width: 40px;
+  height: 40px;
+}
+.lb-close svg {
+  width: 18px;
+  height: 18px;
+}
+.lb-close:hover,
+.lb-nav:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.lb-nav svg {
+  width: 20px;
+  height: 20px;
+}
+.lb-prev { left: -66px; }
+.lb-next { right: -66px; }
+.lb-nav:hover {
+  transform: translateY(-50%) scale(1.06);
+}
+
+.lb-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  padding: 14px;
+  min-height: 0;
+  box-shadow: var(--shadow-lg);
+}
+.lb-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 230px);
+  min-height: 200px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+.lb-fallback {
+  padding: 40px;
+}
+.lb-fallback svg {
+  width: 64px;
+  height: 64px;
+}
+.lb-caption {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-2);
+  text-align: center;
+}
+
+/* ---------- Responsive de galería y lightbox ---------- */
+@media (max-width: 1160px) {
+  .lb-prev { left: 10px; }
+  .lb-next { right: 10px; }
+  .lb-nav {
+    background: rgba(10, 10, 11, 0.72);
+    border-color: transparent;
+    color: #ffffff;
+  }
+  .lb-nav:hover {
+    color: #f87171;
+  }
+}
+
+@media (max-width: 920px) {
+  .certs-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .group-desc {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .certs-gallery {
+    grid-template-columns: 1fr;
+  }
+  .certs-group-head {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .group-line {
+    display: none;
+  }
+  .lightbox {
+    padding: 14px;
+  }
+  .lb-nav {
+    width: 38px;
+    height: 38px;
+  }
+  .lb-img {
+    max-height: calc(100vh - 200px);
+    min-height: 160px;
+  }
+  .lb-caption {
+    font-size: 0.64rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
    13. PROYECTOS
    -------------------------------------------------------------------------- */
 .projects {
@@ -2300,7 +2588,10 @@ ul {
   .references h3,
   .photo-chip,
   .focus-block,
-  .skip-link {
+  .skip-link,
+  .certs-group-head,
+  .certs-gallery,
+  .lightbox {
     display: none !important;
   }
 
@@ -2314,6 +2605,31 @@ ul {
   }
   body::before {
     display: none !important;
+  }
+
+  /* Secciones y tarjetas siempre sobre papel blanco
+     (incluso si el usuario activa "gráficos de fondo") */
+  .section,
+  .hero,
+  .about,
+  .projects,
+  .certs,
+  .skills,
+  .experience,
+  .education,
+  .contact,
+  .references {
+    background: transparent !important;
+  }
+  .tl-card,
+  .edu-card,
+  .skill-card,
+  .cert-card,
+  .project-card,
+  .stat-box,
+  .info-card,
+  .cert-img-wrap {
+    background: #ffffff !important;
   }
 
   /* Mostrar los datos de contacto preparados para el CV impreso */
@@ -2521,8 +2837,8 @@ ul {
   }
 
   .certs-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 8pt !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 6pt !important;
   }
   .cert-card {
     border: 0.75pt solid #ccc !important;
@@ -2530,10 +2846,17 @@ ul {
     padding: 6pt !important;
     page-break-inside: avoid;
   }
+  /* Badges compactos: la 9.ª credencial no debe añadir una página extra */
   .cert-img-wrap {
     background: transparent !important;
     border: none !important;
     margin-bottom: 4pt !important;
+    aspect-ratio: auto !important;
+    height: 56pt !important;
+  }
+  .cert-img {
+    width: auto !important;
+    height: 94% !important;
   }
   .cert-name {
     font-size: 8pt !important;

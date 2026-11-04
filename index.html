@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Vicente Alcivar Moya | Cybersecurity Analyst</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Portfolio de Ciberseguridad de Alex Vicente Alcivar Moya — Cybersecurity Analyst especializado en IAM, SOC Operations e Infrastructure Security. Cybersecurity portfolio: IAM • SOC Operations • Infrastructure Security. Guayaquil, Ecuador.">
+  <meta name="author" content="Alex Vicente Alcivar Moya">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0b">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alex Vicente Alcivar Moya | Cybersecurity Analyst">
+  <meta property="og:description" content="IAM • SOC Operations • Infrastructure Security — Build. Break. Detect. Learn. Automate. Lead.">
+  <meta property="og:locale" content="es_EC">
+
+  <!-- Favicon (escudo inline, sin dependencias) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ef4444' d='M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z'/%3E%3Cpath fill='%230a0a0b' d='M10.6 14.2l-2.1-2.1 1.1-1.1 1 1 3.2-3.2 1.1 1.1-4.3 4.3z'/%3E%3C/svg%3E">
+
+  <!-- Tipografías: Space Grotesk (títulos) · Inter (cuerpo) · JetBrains Mono (código) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap temprano: aplica tema e idioma guardados antes del primer render (evita parpadeo) -->
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('avm-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        var lang = localStorage.getItem('avm-lang') || 'es';
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.lang = lang;
+      } catch (e) { /* localStorage no disponible: se usan valores por defecto */ }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Accesibilidad: saltar al contenido -->
+  <a class="skip-link" href="#hero" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
+
+  <!-- Barra de progreso de scroll -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============================= NAVBAR ============================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+
+      <a href="#hero" class="brand" aria-label="Alex Alcivar — Inicio">
+        <span class="brand-mark" aria-hidden="true">AV</span>
+        <span class="brand-name">alexalcivar<span class="brand-accent">.sec</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+        <a href="#hero"        class="nav-link active" data-es="Inicio"       data-en="Home">Inicio</a>
+        <a href="#about"       class="nav-link" data-es="Sobre mí"    data-en="About">Sobre mí</a>
+        <a href="#experience"  class="nav-link" data-es="Experiencia" data-en="Experience">Experiencia</a>
+        <a href="#skills"      class="nav-link" data-es="Competencias" data-en="Skills">Competencias</a>
+        <a href="#projects"    class="nav-link" data-es="Proyectos"   data-en="Projects">Proyectos</a>
+        <a href="#lab"         class="nav-link" data-es="Laboratorio" data-en="Lab">Laboratorio</a>
+        <a href="#contact"     class="nav-link" data-es="Contacto"    data-en="Contact">Contacto</a>
+        <div class="nav-mobile-extras">
+          <div class="lang-switch" role="group" aria-label="Idioma / Language">
+            <button type="button" class="lang-btn active" data-lang="es" aria-label="Español">ES</button>
+            <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch nav-lang" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-btn active" data-lang="es" aria-label="Español">ES</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+        </div>
+
+        <button type="button" class="theme-toggle" id="theme-toggle"
+                data-es-aria="Cambiar entre tema oscuro y claro" data-en-aria="Toggle dark and light theme"
+                aria-label="Cambiar tema">
+          <!-- Sol (visible en modo oscuro) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/>
+            <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/>
+            <line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/>
+            <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/>
+          </svg>
+          <!-- Luna (visible en modo claro) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button type="button" class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-links"
+                data-es-aria="Abrir menú de navegación" data-en-aria="Open navigation menu" aria-label="Abrir menú de navegación">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================= HERO ============================= -->
+    <section id="hero" class="hero" aria-label="Presentación">
+
+      <!-- Fondo decorativo -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="grid-overlay"></div>
+        <div class="glow glow-red"></div>
+        <div class="glow glow-dim"></div>
+      </div>
+
+      <div class="container hero-inner">
+
+        <!-- Columna de contenido -->
+        <div class="hero-content">
+          <span class="status-pill" data-reveal>
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span data-es="Disponible para nuevas oportunidades" data-en="Open to new opportunities">Disponible para nuevas oportunidades</span>
+          </span>
+
+          <p class="hero-greeting mono" data-reveal data-delay="1">
+            <span class="prompt-red">&gt;_</span> <span data-es="Hola, mi nombre es" data-en="Hello, my name is">Hola, mi nombre es</span>
+          </p>
+
+          <h1 class="hero-name" data-reveal data-delay="2">
+            Alex Vicente<br>Alcivar Moya
+          </h1>
+
+          <h2 class="hero-role" data-reveal data-delay="3">Cybersecurity Analyst</h2>
+
+          <p class="hero-sub" data-reveal data-delay="4">
+            IAM <span class="dot-sep" aria-hidden="true">•</span> SOC Operations <span class="dot-sep" aria-hidden="true">•</span> Infrastructure Security
+          </p>
+
+          <!-- Frase principal con efecto typing (gestionado por script.js) -->
+          <p class="hero-typing mono" data-reveal data-delay="5" aria-label="Build. Break. Detect. Learn. Automate. Lead.">
+            <span class="prompt-red">~$</span> <span id="typed-text">Build.</span><span class="typing-cursor" aria-hidden="true">▍</span>
+          </p>
+
+          <!-- Acciones principales -->
+          <div class="hero-actions" data-reveal data-delay="6">
+            <button type="button" class="btn btn-primary" id="btn-print-cv">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span data-es="Descargar CV PDF" data-en="Download CV PDF">Descargar CV PDF</span>
+            </button>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/alexalcivarm7" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+              LinkedIn
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/alexalcivarm7" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a class="btn btn-ghost" href="https://www.credly.com/users/alexalcivarm7/badges" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/>
+              </svg>
+              Credly
+            </a>
+          </div>
+
+          <p class="hero-meta mono" data-reveal data-delay="7">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Guayaquil, Ecuador
+            <span class="meta-sep" aria-hidden="true">//</span>
+            <a href="mailto:alexalcivarm@hotmail.com" class="meta-mail">alexalcivarm@hotmail.com</a>
+          </p>
+
+          <!-- Bloque exclusivo para impresión (genera el CV en PDF vía window.print) -->
+          <div class="print-only print-contact" aria-hidden="true">
+            alexalcivarm@hotmail.com · linkedin.com/in/alexalcivarm7 · github.com/alexalcivarm7 · credly.com/users/alexalcivarm7/badges · Guayaquil, Ecuador
+          </div>
+        </div>
+
+        <!-- Columna visual: fotografía profesional -->
+        <div class="hero-visual" data-reveal data-delay="3">
+          <div class="photo-frame">
+            <div class="photo-ring" aria-hidden="true"></div>
+            <img id="profile-photo" src="assets/foto.jpg" alt="Fotografía profesional de Alex Vicente Alcivar Moya" width="640" height="640">
+            <!-- Fallback si assets/foto.jpg no está disponible -->
+            <div class="photo-fallback mono" hidden aria-hidden="true">AV</div>
+
+            <div class="photo-chip chip-1 mono" aria-hidden="true">
+              <span class="led led-green"></span>SOC · Blue Team
+            </div>
+            <div class="photo-chip chip-2 mono" aria-hidden="true">
+              <span class="led led-red"></span>IAM · Infrastructure
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 tarjetas resumen -->
+      <div class="container hero-cards" id="hero-cards">
+
+        <article class="summary-card" data-reveal data-delay="1">
+          <div class="summary-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+            </svg>
+          </div>
+          <h3>Identity &amp; Access Management</h3>
+          <p data-es="Ciclo de vida de identidades, aprovisionamiento, MFA y control de accesos en entornos corporativos." data-en="Identity lifecycle, provisioning, MFA and access control in corporate environments.">Ciclo de vida de identidades, aprovisionamiento, MFA y control de accesos en entornos corporativos.</p>
+        </article>
+
+        <article class="summary-card" data-reveal data-delay="2">
+          <div class="summary-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>Security Operations</h3>
+          <p data-es="Monitoreo, triage de alertas, análisis de IOCs y detección de amenazas en operaciones SOC." data-en="Monitoring, alert triage, IOC analysis and threat detection in SOC operations.">Monitoreo, triage de alertas, análisis de IOCs y detección de amenazas en operaciones SOC.</p>
+        </article>
+
+        <article class="summary-card" data-reveal data-delay="3">
+          <div class="summary-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
+              <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+            </svg>
+          </div>
+          <h3>Infrastructure Security</h3>
+          <p data-es="Firewalls, segmentación de red, hardening y protección de infraestructura crítica." data-en="Firewalls, network segmentation, hardening and critical infrastructure protection.">Firewalls, segmentación de red, hardening y protección de infraestructura crítica.</p>
+        </article>
+
+        <article class="summary-card" data-reveal data-delay="4">
+          <div class="summary-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+            </svg>
+          </div>
+          <h3>Security Automation</h3>
+          <p data-es="Automatización de tareas administrativas y flujos de seguridad con PowerShell, Python y Bash." data-en="Automation of admin tasks and security workflows with PowerShell, Python and Bash.">Automatización de tareas administrativas y flujos de seguridad con PowerShell, Python y Bash.</p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ============================= SOBRE MÍ ============================= -->
+    <section id="about" class="section about">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="kicker mono">// 01 · PERFIL</span>
+          <h2 data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
+        </header>
+
+        <div class="about-grid">
+
+          <div class="about-text" data-reveal data-delay="1">
+            <p data-es="Ingeniero en Tecnologías de la Información con más de tres años de experiencia en infraestructura tecnológica y soporte TI, complementados con más de un año y medio de práctica y formación autónoma en ciberseguridad." data-en="Information Technology Engineer with over three years of experience in technology infrastructure and IT support, complemented by more than a year and a half of self-driven practice and training in cybersecurity.">Ingeniero en Tecnologías de la Información con más de tres años de experiencia en infraestructura tecnológica y soporte TI, complementados con más de un año y medio de práctica y formación autónoma en ciberseguridad.</p>
+            <p data-es="Experiencia en entornos corporativos participando en gestión de identidades y accesos (IAM), operaciones SOC, gestión de vulnerabilidades, monitoreo y análisis de eventos de seguridad, hardening y atención de incidentes, utilizando tecnologías como Active Directory, Microsoft 365, Fortinet y plataformas ITSM." data-en="Hands-on experience in corporate environments across identity and access management (IAM), SOC operations, vulnerability management, security event monitoring and analysis, hardening and incident response, using technologies such as Active Directory, Microsoft 365, Fortinet and ITSM platforms.">Experiencia en entornos corporativos participando en gestión de identidades y accesos (IAM), operaciones SOC, gestión de vulnerabilidades, monitoreo y análisis de eventos de seguridad, hardening y atención de incidentes, utilizando tecnologías como Active Directory, Microsoft 365, Fortinet y plataformas ITSM.</p>
+            <p data-es="Conocimientos en threat detection, threat intelligence, seguridad ofensiva y automatización, con proyectos y laboratorios propios basados en MITRE ATT&amp;CK, Wazuh, OpenCTI, pfSense y honeypots. Orientado al análisis de riesgos, la optimización de controles y la mejora continua de la seguridad en entornos corporativos." data-en="Knowledge in threat detection, threat intelligence, offensive security and automation, with personal projects and labs built on MITRE ATT&amp;CK, Wazuh, OpenCTI, pfSense and honeypots. Focused on risk analysis, control optimization and continuous security improvement in corporate environments.">Conocimientos en threat detection, threat intelligence, seguridad ofensiva y automatización, con proyectos y laboratorios propios basados en MITRE ATT&amp;CK, Wazuh, OpenCTI, pfSense y honeypots. Orientado al análisis de riesgos, la optimización de controles y la mejora continua de la seguridad en entornos corporativos.</p>
+
+            <div class="focus-block">
+              <h3 class="focus-title mono" data-es="// Enfoque actual" data-en="// Current focus">// Enfoque actual</h3>
+              <div class="focus-chips">
+                <span class="chip chip-red">Blue Team</span>
+                <span class="chip chip-red">IAM</span>
+                <span class="chip chip-red">Vulnerability Management</span>
+                <span class="chip chip-red">Threat Intelligence</span>
+                <span class="chip chip-dim">Red Team · <span data-es="en desarrollo" data-en="in progress">en desarrollo</span></span>
+                <span class="chip chip-dim">Security Leadership</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="about-side" data-reveal data-delay="2">
+            <div class="info-card">
+              <h3 class="mono" data-es="// ficha_rapida" data-en="// quick_profile">// ficha_rapida</h3>
+              <dl class="info-rows">
+                <div class="info-row"><dt data-es="Nombre" data-en="Name">Nombre</dt><dd>Alex V. Alcivar Moya</dd></div>
+                <div class="info-row"><dt data-es="Rol" data-en="Role">Rol</dt><dd>Cybersecurity Analyst</dd></div>
+                <div class="info-row"><dt data-es="Ubicación" data-en="Location">Ubicación</dt><dd>Guayaquil, EC</dd></div>
+                <div class="info-row"><dt>Email</dt><dd><a href="mailto:alexalcivarm@hotmail.com">alexalcivarm@hotmail.com</a></dd></div>
+                <div class="info-row"><dt data-es="Estado" data-en="Status">Estado</dt><dd><span class="led led-green" aria-hidden="true"></span> <span data-es="Disponible" data-en="Available">Disponible</span></dd></div>
+              </dl>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-box">
+                <span class="stat-value mono">3+</span>
+                <span class="stat-label" data-es="Años en TI e infraestructura" data-en="Years in IT &amp; infrastructure">Años en TI e infraestructura</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-value mono">1.5+</span>
+                <span class="stat-label" data-es="Años en ciberseguridad" data-en="Years in cybersecurity">Años en ciberseguridad</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-value mono">8</span>
+                <span class="stat-label" data-es="Badges en Credly" data-en="Credly badges">Badges en Credly</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-value mono">6</span>
+                <span class="stat-label" data-es="Proyectos y laboratorios" data-en="Projects &amp; labs">Proyectos y laboratorios</span>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= EXPERIENCIA ============================= -->
+    <section id="experience" class="section experience">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="kicker mono">// 02 · TRAYECTORIA</span>
+          <h2 data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</h2>
+          <p class="section-sub" data-es="Trayectoria en ciberseguridad, soporte e infraestructura tecnológica en entornos corporativos." data-en="Background across cybersecurity, IT support and technology infrastructure in corporate environments.">Trayectoria en ciberseguridad, soporte e infraestructura tecnológica en entornos corporativos.</p>
+        </header>
+
+        <!-- Filtros dinámicos de experiencia -->
+        <div class="filters" id="exp-filters" role="group" data-es-aria="Filtrar experiencia" data-en-aria="Filter experience" aria-label="Filtrar experiencia" data-reveal>
+          <button type="button" class="filter-btn active" data-filter="all" data-es="Todas" data-en="All">Todas</button>
+          <button type="button" class="filter-btn" data-filter="cyber" data-es="Ciberseguridad" data-en="Cybersecurity">Ciberseguridad</button>
+          <button type="button" class="filter-btn" data-filter="soporte" data-es="Soporte" data-en="Support">Soporte</button>
+          <button type="button" class="filter-btn" data-filter="infra" data-es="Infraestructura" data-en="Infrastructure">Infraestructura</button>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline" id="exp-timeline">
+
+          <!-- 1 · GRUPO CORPORATIVO FAJARDO -->
+          <article class="tl-item" data-cats="cyber soporte" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+            <div class="tl-card">
+              <div class="tl-head">
+                <span class="tl-period mono" data-es="MAY 2026 — ACTUALIDAD" data-en="MAY 2026 — PRESENT">MAY 2026 — ACTUALIDAD</span>
+                <span class="tl-cat mono">SOC · IAM · ITSM</span>
+              </div>
+              <h3 class="tl-role" data-es="Asistente de Soporte y Ciberseguridad" data-en="IT Support &amp; Cybersecurity Assistant">Asistente de Soporte y Ciberseguridad</h3>
+              <p class="tl-company">GRUPO CORPORATIVO FAJARDO</p>
+              <p class="tl-desc" data-es="Administración de identidades, infraestructura TI, plataformas ITSM y controles de acceso, contribuyendo a la continuidad operativa, el cumplimiento de SLA y la aplicación de políticas de seguridad corporativa." data-en="Administration of identities, IT infrastructure, ITSM platforms and access controls, contributing to operational continuity, SLA compliance and the enforcement of corporate security policies.">Administración de identidades, infraestructura TI, plataformas ITSM y controles de acceso, contribuyendo a la continuidad operativa, el cumplimiento de SLA y la aplicación de políticas de seguridad corporativa.</p>
+              <ul class="tl-list">
+                <li data-es="Administración de Active Directory, Microsoft 365 y SAP Logon: aprovisionamiento de usuarios, roles, licencias, MFA y resolución de incidencias de autorización en desarrollo y producción." data-en="Active Directory, Microsoft 365 and SAP Logon administration: user provisioning, roles, licenses, MFA and authorization issue resolution across development and production.">Administración de Active Directory, Microsoft 365 y SAP Logon: aprovisionamiento de usuarios, roles, licencias, MFA y resolución de incidencias de autorización en desarrollo y producción.</li>
+                <li data-es="Gestión de FortiGate, FortiManager, FortiNAC y UniFi: políticas de acceso, usuarios VPN, autorización de direcciones MAC y monitoreo de tráfico." data-en="FortiGate, FortiManager, FortiNAC and UniFi management: access policies, VPN users, MAC address authorization and traffic monitoring.">Gestión de FortiGate, FortiManager, FortiNAC y UniFi: políticas de acceso, usuarios VPN, autorización de direcciones MAC y monitoreo de tráfico.</li>
+                <li data-es="Operación de Jira Service Management y GLPI con integración LDAP, seguimiento de SLA y personalización de catálogos y formularios." data-en="Jira Service Management and GLPI operation with LDAP integration, SLA tracking and customization of service catalogs and forms.">Operación de Jira Service Management y GLPI con integración LDAP, seguimiento de SLA y personalización de catálogos y formularios.</li>
+                <li data-es="Soporte técnico especializado remoto (AnyDesk), mantenimiento lógico de estaciones de trabajo y recuperación del aplicativo corporativo." data-en="Specialized remote technical support (AnyDesk), workstation maintenance and recovery of the corporate application.">Soporte técnico especializado remoto (AnyDesk), mantenimiento lógico de estaciones de trabajo y recuperación del aplicativo corporativo.</li>
+              </ul>
+              <div class="tl-tech">
+                <span>Active Directory</span><span>Microsoft 365</span><span>SAP</span><span>FortiGate</span><span>FortiManager</span><span>FortiNAC</span><span>UniFi</span><span>Jira</span><span>GLPI</span><span>LDAP</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 · BANCO GUAYAQUIL -->
+          <article class="tl-item" data-cats="cyber" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+            <div class="tl-card">
+              <div class="tl-head">
+                <span class="tl-period mono" data-es="SEP 2025 — MAR 2026" data-en="SEP 2025 — MAR 2026">SEP 2025 — MAR 2026</span>
+                <span class="tl-cat mono">Cyber Offense · VM</span>
+              </div>
+              <h3 class="tl-role" data-es="Pasante Seguridad de la Información — Cyber Offense" data-en="Information Security Intern — Cyber Offense">Pasante Seguridad de la Información — Cyber Offense</h3>
+              <p class="tl-company">BANCO GUAYAQUIL</p>
+              <p class="tl-desc" data-es="Apoyo al equipo Cyber Offense en procesos de gestión de vulnerabilidades, análisis de riesgo y fortalecimiento de controles de seguridad para infraestructura y aplicaciones corporativas." data-en="Supported the Cyber Offense team in vulnerability management, risk analysis and security control hardening for corporate infrastructure and applications.">Apoyo al equipo Cyber Offense en procesos de gestión de vulnerabilidades, análisis de riesgo y fortalecimiento de controles de seguridad para infraestructura y aplicaciones corporativas.</p>
+              <ul class="tl-list">
+                <li data-es="Análisis de boletines de seguridad y priorización de vulnerabilidades CVE/CVSS y Zero-Day, con seguimiento de planes de remediación." data-en="Security bulletin analysis and CVE/CVSS and Zero-Day vulnerability prioritization, with remediation plan follow-up.">Análisis de boletines de seguridad y priorización de vulnerabilidades CVE/CVSS y Zero-Day, con seguimiento de planes de remediación.</li>
+                <li data-es="Validación técnica de vulnerabilidades sobre infraestructura crítica y análisis de riesgos para apoyar la toma de decisiones del equipo de seguridad." data-en="Technical vulnerability validation on critical infrastructure and risk analysis to support the security team's decision-making.">Validación técnica de vulnerabilidades sobre infraestructura crítica y análisis de riesgos para apoyar la toma de decisiones del equipo de seguridad.</li>
+                <li data-es="Threat Intelligence: pruebas en laboratorios controlados para validar la efectividad de controles frente a escenarios de ataque." data-en="Threat Intelligence: controlled lab testing to validate the effectiveness of security controls against attack scenarios.">Threat Intelligence: pruebas en laboratorios controlados para validar la efectividad de controles frente a escenarios de ataque.</li>
+                <li data-es="Hardening de sistemas, revisión de gestión de cambios y auditorías de seguridad web: escaneo de puertos y validación de HTTP Security Headers." data-en="System hardening, change management review and web security audits: port scanning and HTTP Security Headers validation.">Hardening de sistemas, revisión de gestión de cambios y auditorías de seguridad web: escaneo de puertos y validación de HTTP Security Headers.</li>
+              </ul>
+              <div class="tl-tech">
+                <span>CVE</span><span>CVSS</span><span>Threat Intelligence</span><span>Hardening</span><span>Web Security</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3 · ALMACENES DE PRATI -->
+          <article class="tl-item" data-cats="cyber" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+            <div class="tl-card">
+              <div class="tl-head">
+                <span class="tl-period mono" data-es="MAY 2025 — SEP 2025" data-en="MAY 2025 — SEP 2025">MAY 2025 — SEP 2025</span>
+                <span class="tl-cat mono">SOC · TVM</span>
+              </div>
+              <h3 class="tl-role" data-es="Pasante de Ciberseguridad" data-en="Cybersecurity Intern">Pasante de Ciberseguridad</h3>
+              <p class="tl-company">ALMACENES DE PRATI S.A.</p>
+              <p class="tl-desc" data-es="Participación en operaciones SOC, gestión de vulnerabilidades y monitoreo de seguridad, apoyando la detección temprana de amenazas y la protección de activos digitales." data-en="Participated in SOC operations, vulnerability management and security monitoring, supporting early threat detection and the protection of digital assets.">Participación en operaciones SOC, gestión de vulnerabilidades y monitoreo de seguridad, apoyando la detección temprana de amenazas y la protección de activos digitales.</p>
+              <ul class="tl-list">
+                <li data-es="Vulnerability Management (TVM) con Qualys VMDR y HaloSecurity, priorizando hallazgos según CVSS, criticidad de activos y nivel de exposición." data-en="Vulnerability Management (TVM) with Qualys VMDR and HaloSecurity, prioritizing findings by CVSS, asset criticality and exposure level.">Vulnerability Management (TVM) con Qualys VMDR y HaloSecurity, priorizando hallazgos según CVSS, criticidad de activos y nivel de exposición.</li>
+                <li data-es="Operaciones SOC: monitoreo de alertas con Cortex XDR y Cloudflare, análisis de IOCs, triage de eventos y reducción de falsos positivos." data-en="SOC operations: alert monitoring with Cortex XDR and Cloudflare, IOC analysis, event triage and false-positive reduction.">Operaciones SOC: monitoreo de alertas con Cortex XDR y Cloudflare, análisis de IOCs, triage de eventos y reducción de falsos positivos.</li>
+                <li data-es="Análisis de tráfico WAF, bloqueo de IPs maliciosas y validación de Security Headers mediante Cloudflare; análisis de phishing con Microsoft Defender." data-en="WAF traffic analysis, malicious IP blocking and Security Headers validation via Cloudflare; phishing analysis with Microsoft Defender.">Análisis de tráfico WAF, bloqueo de IPs maliciosas y validación de Security Headers mediante Cloudflare; análisis de phishing con Microsoft Defender.</li>
+                <li data-es="Campañas de concienciación con Sophos, definición de KPIs y reportes ejecutivos con indicadores de seguridad para stakeholders." data-en="Security awareness campaigns with Sophos, KPI definition and executive reporting with security indicators for stakeholders.">Campañas de concienciación con Sophos, definición de KPIs y reportes ejecutivos con indicadores de seguridad para stakeholders.</li>
+              </ul>
+              <div class="tl-tech">
+                <span>Cortex XDR</span><span>Cloudflare</span><span>Qualys VMDR</span><span>HaloSecurity</span><span>Sophos</span><span>IOC Analysis</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 · LINKGEN -->
+          <article class="tl-item" data-cats="infra soporte" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+            <div class="tl-card">
+              <div class="tl-head">
+                <span class="tl-period mono" data-es="JUN 2020 — ABR 2022" data-en="JUN 2020 — APR 2022">JUN 2020 — ABR 2022</span>
+                <span class="tl-cat mono">Infraestructura · On-site</span>
+              </div>
+              <h3 class="tl-role" data-es="Técnico de Infraestructura TI y Seguridad Física" data-en="IT Infrastructure &amp; Physical Security Technician">Técnico de Infraestructura TI y Seguridad Física</h3>
+              <p class="tl-company">LINKGEN S.A.</p>
+              <p class="tl-desc" data-es="Soporte a la infraestructura tecnológica y sistemas de seguridad física, garantizando la disponibilidad de los servicios y la continuidad operativa." data-en="Support for technology infrastructure and physical security systems, ensuring service availability and operational continuity.">Soporte a la infraestructura tecnológica y sistemas de seguridad física, garantizando la disponibilidad de los servicios y la continuidad operativa.</p>
+              <ul class="tl-list">
+                <li data-es="Help Desk: diagnóstico y resolución de incidencias de hardware y software, mantenimiento preventivo y correctivo de estaciones de trabajo." data-en="Help Desk: diagnosis and resolution of hardware and software incidents, preventive and corrective maintenance of workstations.">Help Desk: diagnóstico y resolución de incidencias de hardware y software, mantenimiento preventivo y correctivo de estaciones de trabajo.</li>
+                <li data-es="Cableado estructurado: instalación y certificación de enlaces conforme a estándares TIA/EIA." data-en="Structured cabling: installation and certification of links under TIA/EIA standards.">Cableado estructurado: instalación y certificación de enlaces conforme a estándares TIA/EIA.</li>
+                <li data-es="Sistemas CCTV: instalación, configuración y mantenimiento de soluciones de videovigilancia y control de acceso." data-en="CCTV systems: installation, configuration and maintenance of video surveillance and access control solutions.">Sistemas CCTV: instalación, configuración y mantenimiento de soluciones de videovigilancia y control de acceso.</li>
+                <li data-es="Despliegue de soluciones tecnológicas en campo, trabajo en altura y cumplimiento de protocolos de seguridad industrial." data-en="On-site deployment of technology solutions, work at height and industrial safety protocol compliance.">Despliegue de soluciones tecnológicas en campo, trabajo en altura y cumplimiento de protocolos de seguridad industrial.</li>
+              </ul>
+              <div class="tl-tech">
+                <span>Help Desk</span><span>CCTV</span><span data-es="Cableado estructurado" data-en="Structured cabling">Cableado estructurado</span><span data-es="Infraestructura" data-en="Infrastructure">Infraestructura</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= EDUCACIÓN ============================= -->
+    <section id="education" class="section education">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="kicker mono">// 03 · FORMACIÓN</span>
+          <h2 data-es="Educación" data-en="Education">Educación</h2>
+        </header>
+
+        <div class="edu-grid">
+          <article class="edu-card" data-reveal data-delay="1">
+            <div class="edu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/>
+              </svg>
+            </div>
+            <div class="edu-body">
+              <span class="edu-tag mono" data-es="GRADO UNIVERSITARIO" data-en="UNIVERSITY DEGREE">GRADO UNIVERSITARIO</span>
+              <h3 data-es="Ingeniero en Tecnologías de la Información" data-en="B.Sc. in Information Technologies Engineering">Ingeniero en Tecnologías de la Información</h3>
+              <p class="edu-school">Universidad de Guayaquil</p>
+              <p class="edu-period mono" data-es="JUN 2020 — MAR 2026" data-en="JUN 2020 — MAR 2026">JUN 2020 — MAR 2026</p>
+            </div>
+          </article>
+
+          <article class="edu-card" data-reveal data-delay="2">
+            <div class="edu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+            </div>
+            <div class="edu-body">
+              <span class="edu-tag mono" data-es="BACHILLERATO TÉCNICO" data-en="TECHNICAL DIPLOMA">BACHILLERATO TÉCNICO</span>
+              <h3 data-es="Bachiller Técnico en Administración de Sistemas" data-en="Technical Diploma in Systems Administration">Bachiller Técnico en Administración de Sistemas</h3>
+              <p class="edu-school">Unidad Educativa Atenas International School</p>
+              <p class="edu-period mono" data-es="MAY 2015 — MAR 2016" data-en="MAY 2015 — MAR 2016">MAY 2015 — MAR 2016</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================= COMPETENCIAS ============================= -->
+    <section id="skills" class="section skills">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="kicker mono">// 04 · COMPETENCIAS</span>
+          <h2 data-es="Competencias Técnicas" data-en="Technical Skills">Competencias Técnicas</h2>
+          <p class="section-sub" data-es="Tecnologías utilizadas en entornos de producción, laboratorios y formación continua." data-en="Technologies used across production environments, labs and continuous learning.">Tecnologías utilizadas en entornos de producción, laboratorios y formación continua.</p>
+        </header>
+
+        <!-- Filtros dinámicos de competencias -->
+        <div class="filters" id="skill-filters" role="group" data-es-aria="Filtrar competencias" data-en-aria="Filter skills" aria-label="Filtrar competencias" data-reveal>
+          <button type="button" class="filter-btn active" data-filter="all" data-es="Todas" data-en="All">Todas</button>
+          <button type="button" class="filter-btn" data-filter="iam">IAM</button>
+          <button type="button" class="filter-btn" data-filter="soc">SOC</button>
+          <button type="button" class="filter-btn" data-filter="infra" data-es="Infraestructura" data-en="Infrastructure">Infraestructura</button>
+          <button type="button" class="filter-btn" data-filter="vuln" data-es="Vulnerabilidades" data-en="Vulnerabilities">Vulnerabilidades</button>
+          <button type="button" class="filter-btn" data-filter="automation" data-es="Automatización" data-en="Automation">Automatización</button>
+          <button type="button" class="filter-btn" data-filter="offensive" data-es="Seguridad Ofensiva" data-en="Offensive Security">Seguridad Ofensiva</button>
+        </div>
+
+        <p class="skill-legend mono" data-reveal>
+          <span class="led led-green" aria-hidden="true"></span>
+          <span data-es="Producción" data-en="Production">Producción</span>
+          <span class="legend-sep" aria-hidden="true">/</span>
+          <span class="led led-cyan" aria-hidden="true"></span>
+          <span data-es="Laboratorio y formación" data-en="Lab &amp; training">Laboratorio y formación</span>
+        </p>
+
+        <div class="skills-grid" id="skills-grid">
+
+          <!-- IAM -->
+          <article class="skill-card" data-cat="iam" data-reveal>
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+                </svg>
+              </span>
+              <h3>IAM</h3>
+              <span class="skill-count mono">05</span>
+            </div>
+            <p class="skill-desc" data-es="Identity &amp; Access Management" data-en="Identity &amp; Access Management">Identity &amp; Access Management</p>
+            <ul class="skill-list">
+              <li><span class="led led-green" aria-hidden="true"></span>Active Directory</li>
+              <li><span class="led led-green" aria-hidden="true"></span>LDAP</li>
+              <li><span class="led led-green" aria-hidden="true"></span>Microsoft 365</li>
+              <li><span class="led led-green" aria-hidden="true"></span>SAP</li>
+              <li><span class="led led-green" aria-hidden="true"></span>MFA</li>
+            </ul>
+          </article>
+
+          <!-- SOC -->
+          <article class="skill-card" data-cat="soc" data-reveal>
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </span>
+              <h3>SOC</h3>
+              <span class="skill-count mono">05</span>
+            </div>
+            <p class="skill-desc" data-es="Security Operations Center" data-en="Security Operations Center">Security Operations Center</p>
+            <ul class="skill-list">
+              <li><span class="led led-cyan" aria-hidden="true"></span>Wazuh</li>
+              <li><span class="led led-green" aria-hidden="true"></span>Cortex XDR</li>
+              <li><span class="led led-green" aria-hidden="true"></span>Cloudflare</li>
+              <li><span class="led led-green" aria-hidden="true"></span>IOC Analysis</li>
+              <li><span class="led led-green" aria-hidden="true"></span>Threat Detection</li>
+            </ul>
+          </article>
+
+          <!-- Infraestructura -->
+          <article class="skill-card" data-cat="infra" data-reveal>
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
+                  <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+                </svg>
+              </span>
+              <h3 data-es="Infraestructura" data-en="Infrastructure">Infraestructura</h3>
+              <span class="skill-count mono">05</span>
+            </div>
+            <p class="skill-desc" data-es="Redes, servidores y perimeter security" data-en="Networks, servers &amp; perimeter security">Redes, servidores y perimeter security</p>
+            <ul class="skill-list">
+              <li><span class="led led-green" aria-hidden="true"></span>FortiGate</li>
+              <li><span class="led led-green" aria-hidden="true"></span>FortiManager</li>
+              <li><span class="led led-green" aria-hidden="true"></span>FortiNAC</li>
+              <li><span class="led led-green" aria-hidden="true"></span>UniFi</li>
+              <li><span class="led led-green" aria-hidden="true"></span>Windows Server</li>
+            </ul>
+          </article>
+
+          <!-- Vulnerabilidades -->
+          <article class="skill-card" data-cat="vuln" data-reveal>
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </span>
+              <h3 data-es="Vulnerabilidades" data-en="Vulnerabilities">Vulnerabilidades</h3>
+              <span class="skill-count mono">04</span>
+            </div>
+            <p class="skill-desc" data-es="Vulnerability Management &amp; Hardening" data-en="Vulnerability Management &amp; Hardening">Vulnerability Management &amp; Hardening</p>
+            <ul class="skill-list">
+              <li><span class="led led-green" aria-hidden="true"></span>Qualys VMDR</li>
+              <li><span class="led led-green" aria-hidden="true"></span>HaloSecurity</li>
+              <li><span class="led led-green" aria-hidden="true"></span>CVSS</li>
+              <li><span class="led led-green" aria-hidden="true"></span>Hardening</li>
+            </ul>
+          </article>
+
+          <!-- Automatización -->
+          <article class="skill-card" data-cat="automation" data-reveal>
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+                </svg>
+              </span>
+              <h3 data-es="Automatización" data-en="Automation">Automatización</h3>
+              <span class="skill-count mono">03</span>
+            </div>
+            <p class="skill-desc" data-es="Scripting y automatización de flujos" data-en="Scripting &amp; workflow automation">Scripting y automatización de flujos</p>
+            <ul class="skill-list">
+              <li><span class="led led-green" aria-hidden="true"></span>PowerShell</li>
+              <li><span class="led led-cyan" aria-hidden="true"></span>Python</li>
+              <li><span class="led led-cyan" aria-hidden="true"></span>Bash</li>
+            </ul>
+          </article>
+
+          <!-- Seguridad Ofensiva -->
+          <article class="skill-card" data-cat="offensive" data-reveal>
+            <div class="skill-head">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/>
+                  <line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/>
+                </svg>
+              </span>
+              <h3 data-es="Seguridad Ofensiva" data-en="Offensive Security">Seguridad Ofensiva</h3>
+              <span class="skill-count mono">05</span>
+            </div>
+            <p class="skill-desc" data-es="Red Team y emulación de adversarios" data-en="Red Team &amp; adversary emulation">Red Team y emulación de adversarios</p>
+            <ul class="skill-list">
+              <li><span class="led led-cyan" aria-hidden="true"></span>Kali Linux</li>
+              <li><span class="led led-green" aria-hidden="true"></span>Nmap</li>
+              <li><span class="led led-cyan" aria-hidden="true"></span>Burp Suite</li>
+              <li><span class="led led-cyan" aria-hidden="true"></span>Metasploit</li>
+              <li><span class="led led-cyan" aria-hidden="true"></span>MITRE ATT&amp;CK</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CERTIFICACIONES ============================= -->
+    <section id="certifications" class="section certs">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="kicker mono">// 05 · CREDENCIALES</span>
+          <h2 data-es="Certificaciones" data-en="Certifications">Certificaciones</h2>
+          <p class="section-sub" data-es="Badges verificables — haz clic en cada credencial para validarla en Credly." data-en="Verifiable badges — click each credential to verify it on Credly.">Badges verificables — haz clic en cada credencial para validarla en Credly.</p>
+        </header>
+
+        <div class="certs-grid" id="certs-grid">
+
+          <a class="cert-card" href="https://www.credly.com/badges/6004c42f-7f67-486a-8f59-d8c9c2199859/public_url" target="_blank" rel="noopener" data-reveal>
+            <div class="cert-img-wrap">
+              <img class="cert-img" src="images/CyberOps%20Associate.png" alt="CyberOps Associate" loading="lazy">
+              <div class="cert-fallback" hidden aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/></svg>
+              </div>
+            </div>
+            <span class="cert-name">CyberOps Associate</span>
+            <span class="cert-verify mono">CREDLY ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://www.credly.com/badges/a7ca8ccc-8ff8-4ee5-9ade-133e36cc9f3a/public_url" target="_blank" rel="noopener" data-reveal>
+            <div class="cert-img-wrap">
+              <img class="cert-img" src="images/Pre%20Security%20(SEC0).png" alt="Pre Security (SEC0)" loading="lazy">
+              <div class="cert-fallback" hidden aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/></svg>
+              </div>
+            </div>
+            <span class="cert-name">Pre Security (SEC0)</span>
+            <span class="cert-verify mono">CREDLY ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://www.credly.com/badges/c0d3e7fb-d5f1-4416-8b70-5ef3e375ff99/public_url" target="_blank" rel="noopener" data-reveal>
+            <div class="cert-img-wrap">
+              <img class="cert-img" src="images/Fundamentos%20en%20Blue%20Team%20Ciberinteligencia,%20Forense%20y%20Respuesta.png" alt="Fundamentos en Blue Team: Ciberinteligencia, Forense y Respuesta" loading="lazy">
+              <div class="cert-fallback" hidden aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/></svg>
+              </div>
+            </div>
+            <span class="cert-name">Fundamentos en Blue Team</span>
+            <span class="cert-verify mono">CREDLY ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://www.credly.com/badges/75f4d7ae-cf8f-462c-af2f-a9af21c77b43/public_url" target="_blank" rel="noopener" data-reveal>
+            <div class="cert-img-wrap">
+              <img class="cert-img" src="images/Introduction%20to%20Cybersecurity.png" alt="Introduction to Cybersecurity" loading="lazy">
+              <div class="cert-fallback" hidden aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/></svg>
+              </div>
+            </div>
+            <span class="cert-name">Introduction to Cybersecurity</span>
+            <span class="cert-verify mono">CREDLY ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://www.credly.com/badges/ea804509-8df6-40c8-9cb3-9e2b1cfeecb5/public_url" target="_blank" rel="noopener" data-reveal>
+            <div class="cert-img-wrap">
+              <img class="cert-img" src="images/Getting%20Started%20with%20Cybersecurity.png" alt="Getting Started with Cybersecurity" loading="lazy">
+              <div class="cert-fallback" hidden aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/></svg>
+              </div>
+            </div>
+            <span class="cert-name">Getting Started with Cybersecurity</span>
+            <span class="cert-verify mono">CREDLY ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://www.credly.com/badges/a8572487-1119-4a1f-a386-8b1122dab2c0/public_url" target="_blank" rel="noopener" data-reveal>
+            <div class="cert-img-wrap">
+              <img class="cert-img" src="images/Digital%20Safety%20and%20Security%20Awareness.png" alt="Digital Safety and Security Awareness" loading="lazy">
+              <div class="cert-fallback" hidden aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/></svg>
+              </div>
+            </div>
+            <span class="cert-name">Digital Safety and Security Awareness</span>
+            <span class="cert-verify mono">CREDLY ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://www.credly.com/badges/c80b430e-7ff1-47c1-9bde-5f61a98ce5da/public_url" target="_blank" rel="noopener" data-reveal>
+            <div class="cert-img-wrap">
+              <img class="cert-img" src="images/Networking%20Basics.png" alt="Networking Basics" loading="lazy">
+              <div class="cert-fallback" hidden aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/></svg>
+              </div>
+            </div>
+            <span class="cert-name">Networking Basics</span>
+            <span class="cert-verify mono">CREDLY ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://www.credly.com/badges/dd8dfdec-e474-4f41-9b62-f3281eb7da84/public_url" target="_blank" rel="noopener" data-reveal>
+            <div class="cert-img-wrap">
+              <img class="cert-img" src="images/Computer%20Hardware%20Basics.png" alt="Computer Hardware Basics" loading="lazy">
+              <div class="cert-fallback" hidden aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/></svg>
+              </div>
+            </div>
+            <span class="cert-name">Computer Hardware Basics</span>
+            <span class="cert-verify mono">CREDLY ↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PROYECTOS ============================= -->
+    <section id="projects" class="section projects">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="kicker mono">// 06 · PROYECTOS</span>
+          <h2 data-es="Proyectos Destacados" data-en="Featured Projects">Proyectos Destacados</h2>
+          <p class="section-sub" data-es="Laboratorios de ciberseguridad y herramientas de automatización construidos de forma autónoma." data-en="Security labs and automation tooling built independently.">Laboratorios de ciberseguridad y herramientas de automatización construidos de forma autónoma.</p>
+        </header>
+
+        <div class="projects-grid">
+
+          <!-- Proyecto 1 -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <span class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <span class="project-type mono">LAB</span>
+            </div>
+            <h3>MITRE CALDERA Adversary Emulation Lab</h3>
+            <p data-es="Laboratorio aislado para emulación de adversarios basado en MITRE ATT&amp;CK, integrando Active Directory, Windows Server, Windows 11, Linux y agentes Sandcat para validar técnicas ofensivas en un entorno controlado." data-en="Isolated adversary emulation lab based on MITRE ATT&amp;CK, integrating Active Directory, Windows Server, Windows 11, Linux and Sandcat agents to validate offensive techniques in a controlled environment.">Laboratorio aislado para emulación de adversarios basado en MITRE ATT&amp;CK, integrando Active Directory, Windows Server, Windows 11, Linux y agentes Sandcat para validar técnicas ofensivas en un entorno controlado.</p>
+            <div class="project-tech">
+              <span>CALDERA</span><span>Sandcat</span><span>Active Directory</span><span>Windows Server</span><span>Kali Linux</span>
+            </div>
+            <div class="project-foot">
+              <a class="btn-mini" href="https://github.com/alexalcivarm7" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 2 -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <span class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 20h20"/><path d="M5 20V8l5-4 5 4v12"/><path d="M15 12h6v8"/><path d="M9 12h2"/><path d="M9 16h2"/>
+                </svg>
+              </span>
+              <span class="project-type mono">LAB</span>
+            </div>
+            <h3>Medium-Interaction Honeypot Lab</h3>
+            <p data-es="Laboratorio académico para detección temprana y análisis de ciberataques sobre una infraestructura corporativa simulada, con segmentación VLAN vía pfSense, políticas de firewall y NAT, y servicios aislados para estudiar actividad maliciosa." data-en="Academic lab for early detection and analysis of cyberattacks on a simulated corporate infrastructure, with VLAN segmentation via pfSense, firewall and NAT policies, and isolated services to study malicious activity.">Laboratorio académico para detección temprana y análisis de ciberataques sobre una infraestructura corporativa simulada, con segmentación VLAN vía pfSense, políticas de firewall y NAT, y servicios aislados para estudiar actividad maliciosa.</p>
+            <div class="project-tech">
+              <span>pfSense</span><span>Cowrie</span><span>Glastopf</span><span>Wazuh</span><span>Snort</span>
+            </div>
+            <div class="project-foot">
+              <a class="btn-mini" href="https://github.com/alexalcivarm7" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 3 -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <span class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </span>
+              <span class="project-type mono">TOOL</span>
+            </div>
+            <h3>Local Security Monitoring Console</h3>
+            <p data-es="Herramienta en Python para identificar actividad potencialmente sospechosa mediante el análisis de procesos, conexiones de red, comportamiento DNS, usuarios y rutas del sistema, integrando VirusTotal para enriquecer el análisis." data-en="Python tool that identifies potentially suspicious activity by analyzing processes, network connections, DNS behavior, users and system paths, integrating VirusTotal to enrich the analysis.">Herramienta en Python para identificar actividad potencialmente sospechosa mediante el análisis de procesos, conexiones de red, comportamiento DNS, usuarios y rutas del sistema, integrando VirusTotal para enriquecer el análisis.</p>
+            <div class="project-tech">
+              <span>Python</span><span>VirusTotal</span>
+            </div>
+            <div class="project-foot">
+              <a class="btn-mini" href="https://github.com/alexalcivarm7" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 4 -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <span class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                </svg>
+              </span>
+              <span class="project-type mono">AUTOMATION</span>
+            </div>
+            <h3>Web Service AutoRecovery</h3>
+            <p data-es="Automatización en PowerShell que monitorea endpoints HTTP, detecta indisponibilidad de servicios y ejecuta procesos controlados de recuperación con validación posterior." data-en="PowerShell automation that monitors HTTP endpoints, detects service outages and runs controlled recovery processes with post-validation.">Automatización en PowerShell que monitorea endpoints HTTP, detecta indisponibilidad de servicios y ejecuta procesos controlados de recuperación con validación posterior.</p>
+            <div class="project-tech">
+              <span>PowerShell</span>
+            </div>
+            <div class="project-foot">
+              <a class="btn-mini" href="https://github.com/alexalcivarm7" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 5 -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <span class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/>
+                  <line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/>
+                  <line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>
+                </svg>
+              </span>
+              <span class="project-type mono">AUTOMATION</span>
+            </div>
+            <h3>Automation Toolkit</h3>
+            <p data-es="Conjunto de utilidades en PowerShell orientadas a la automatización de tareas administrativas, operaciones de infraestructura y flujos de trabajo relacionados con seguridad." data-en="Collection of PowerShell utilities for automating administrative tasks, infrastructure operations and security-related workflows.">Conjunto de utilidades en PowerShell orientadas a la automatización de tareas administrativas, operaciones de infraestructura y flujos de trabajo relacionados con seguridad.</p>
+            <div class="project-tech">
+              <span>PowerShell</span><span>Windows</span>
+            </div>
+            <div class="project-foot">
+              <a class="btn-mini" href="https://github.com/alexalcivarm7" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 6 -->
+          <article class="project-card" data-reveal>
+            <div class="project-top">
+              <span class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </span>
+              <span class="project-type mono">LAB</span>
+            </div>
+            <h3>OpenCTI Platform</h3>
+            <p data-es="Despliegue de OpenCTI sobre Docker en Kali Linux para centralizar y gestionar indicadores de compromiso (IOCs), observables y fuentes de inteligencia de amenazas." data-en="OpenCTI deployment on Docker over Kali Linux to centralize and manage indicators of compromise (IOCs), observables and threat intelligence sources.">Despliegue de OpenCTI sobre Docker en Kali Linux para centralizar y gestionar indicadores de compromiso (IOCs), observables y fuentes de inteligencia de amenazas.</p>
+            <div class="project-tech">
+              <span>OpenCTI</span><span>Docker</span><span>Kali Linux</span>
+            </div>
+            <div class="project-foot">
+              <a class="btn-mini" href="https://github.com/alexalcivarm7" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= LABORATORIO ============================= -->
+    <section id="lab" class="section lab">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="kicker mono">// 07 · LABORATORIO</span>
+          <h2>Current Lab Environment</h2>
+          <p class="section-sub" data-es="Arquitectura de mi laboratorio local: emulación de adversarios, segmentación de red, identidad corporativa y detección en un entorno aislado." data-en="My home lab architecture: adversary emulation, network segmentation, corporate identity and detection in an isolated environment.">Arquitectura de mi laboratorio local: emulación de adversarios, segmentación de red, identidad corporativa y detección en un entorno aislado.</p>
+        </header>
+
+        <div class="lab-diagram" data-reveal>
+
+          <!-- Zona 1 · Adversario -->
+          <div class="lab-zone zone-adversary">
+            <div class="lab-zone-head">
+              <span class="lab-zone-id mono">ZONE 01</span>
+              <span class="lab-zone-name" data-es="Capa de Adversario" data-en="Adversary Layer">Capa de Adversario</span>
+            </div>
+            <div class="lab-nodes">
+              <div class="lab-node">
+                <span class="led led-green" aria-hidden="true"></span>
+                <div class="lab-node-body">
+                  <strong>Kali Linux</strong>
+                  <span class="mono" data-es="VM de ataque" data-en="Attack VM">VM de ataque</span>
+                </div>
+              </div>
+              <div class="lab-node">
+                <span class="led led-green" aria-hidden="true"></span>
+                <div class="lab-node-body">
+                  <strong>MITRE CALDERA</strong>
+                  <span class="mono" data-es="Emulación de adversarios" data-en="Adversary emulation">Emulación de adversarios</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lab-connector" aria-hidden="true"><span class="lab-pulse"></span></div>
+
+          <!-- Zona 2 · Red -->
+          <div class="lab-zone zone-network">
+            <div class="lab-zone-head">
+              <span class="lab-zone-id mono">ZONE 02</span>
+              <span class="lab-zone-name" data-es="Capa de Red" data-en="Network Layer">Capa de Red</span>
+            </div>
+            <div class="lab-nodes">
+              <div class="lab-node">
+                <span class="led led-green" aria-hidden="true"></span>
+                <div class="lab-node-body">
+                  <strong>pfSense</strong>
+                  <span class="mono">Firewall · VLAN · NAT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lab-connector" aria-hidden="true"><span class="lab-pulse"></span></div>
+
+          <!-- Zona 3 · Identidad -->
+          <div class="lab-zone zone-identity">
+            <div class="lab-zone-head">
+              <span class="lab-zone-id mono">ZONE 03</span>
+              <span class="lab-zone-name" data-es="Capa de Identidad" data-en="Identity Layer">Capa de Identidad</span>
+            </div>
+            <div class="lab-nodes">
+              <div class="lab-node">
+                <span class="led led-green" aria-hidden="true"></span>
+                <div class="lab-node-body">
+                  <strong>Windows Server</strong>
+                  <span class="mono">Domain Controller</span>
+                </div>
+              </div>
+              <div class="lab-node">
+                <span class="led led-green" aria-hidden="true"></span>
+                <div class="lab-node-body">
+                  <strong>Active Directory</strong>
+                  <span class="mono" data-es="Servicios de identidad" data-en="Identity services">Servicios de identidad</span>
+                </div>
+              </div>
+              <div class="lab-node">
+                <span class="led led-green" aria-hidden="true"></span>
+                <div class="lab-node-body">
+                  <strong>Windows 11</strong>
+                  <span class="mono">Endpoint</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lab-connector" aria-hidden="true"><span class="lab-pulse"></span></div>
+
+          <!-- Zona 4 · Detección -->
+          <div class="lab-zone zone-detection">
+            <div class="lab-zone-head">
+              <span class="lab-zone-id mono">ZONE 04</span>
+              <span class="lab-zone-name" data-es="Capa de Detección e Inteligencia" data-en="Detection &amp; Intelligence Layer">Capa de Detección e Inteligencia</span>
+            </div>
+            <div class="lab-nodes">
+              <div class="lab-node">
+                <span class="led led-green" aria-hidden="true"></span>
+                <div class="lab-node-body">
+                  <strong>Wazuh</strong>
+                  <span class="mono">SIEM</span>
+                </div>
+              </div>
+              <div class="lab-node">
+                <span class="led led-green" aria-hidden="true"></span>
+                <div class="lab-node-body">
+                  <strong>OpenCTI</strong>
+                  <span class="mono">Threat Intelligence</span>
+                </div>
+              </div>
+              <div class="lab-node">
+                <span class="led led-green" aria-hidden="true"></span>
+                <div class="lab-node-body">
+                  <strong>Snort</strong>
+                  <span class="mono">IDS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="lab-note mono" data-reveal data-es="// Entorno aislado de laboratorio — sin exposición a redes productivas" data-en="// Isolated lab environment — no exposure to production networks">// Entorno aislado de laboratorio — sin exposición a redes productivas</p>
+      </div>
+    </section>
+
+    <!-- ============================= TERMINAL ============================= -->
+    <section id="terminal" class="section terminal-section">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="kicker mono">// 08 · CONSOLA</span>
+          <h2 data-es="Terminal Interactiva" data-en="Interactive Terminal">Terminal Interactiva</h2>
+          <p class="section-sub" data-es="Comandos representativos de mi día a día técnico — solo visualización, no se ejecuta nada." data-en="Representative commands from my technical day-to-day — display only, nothing is executed.">Comandos representativos de mi día a día técnico — solo visualización, no se ejecuta nada.</p>
+        </header>
+
+        <div class="terminal-window" data-reveal>
+          <div class="terminal-bar">
+            <div class="terminal-dots" aria-hidden="true">
+              <span class="td td-red"></span><span class="td td-yellow"></span><span class="td td-green"></span>
+            </div>
+            <span class="terminal-title mono">alex@soc-lab: ~/portfolio</span>
+            <div class="terminal-tabs" role="tablist" aria-label="Terminales">
+              <button type="button" class="t-tab active" role="tab" aria-selected="true" data-tab="powershell">PowerShell</button>
+              <button type="button" class="t-tab" role="tab" aria-selected="false" data-tab="fortigate">FortiGate</button>
+              <button type="button" class="t-tab" role="tab" aria-selected="false" data-tab="soc">SOC</button>
+              <button type="button" class="t-tab" role="tab" aria-selected="false" data-tab="linux">Linux</button>
+            </div>
+          </div>
+
+          <div class="terminal-body mono">
+
+            <!-- PowerShell -->
+            <div class="t-pane active" id="pane-powershell" role="tabpanel" aria-label="PowerShell">
+              <p class="t-line"><span class="t-prompt">PS C:\&gt;</span> <span class="t-cmd">Get-ADUser -Identity aalcivar -Properties *</span></p>
+              <p class="t-line"><span class="t-prompt">PS C:\&gt;</span> <span class="t-cmd">Get-WinEvent -FilterHashtable @{LogName='Security'; ID=4625} -MaxEvents 20</span></p>
+              <p class="t-line"><span class="t-prompt">PS C:\&gt;</span> <span class="t-cmd">Get-ADGroupMember -Identity "G-SOC-Analysts"</span></p>
+              <p class="t-comment" data-es="# Consultas de ejemplo · IAM / Active Directory" data-en="# Sample queries · IAM / Active Directory"># Consultas de ejemplo · IAM / Active Directory</p>
+            </div>
+
+            <!-- FortiGate -->
+            <div class="t-pane" id="pane-fortigate" role="tabpanel" aria-label="FortiGate" hidden>
+              <p class="t-line"><span class="t-prompt">FortiGate-100F #</span> <span class="t-cmd">show firewall policy</span></p>
+              <p class="t-line"><span class="t-prompt">FortiGate-100F #</span> <span class="t-cmd">show vpn ipsec phase1-interface</span></p>
+              <p class="t-line"><span class="t-prompt">FortiGate-100F #</span> <span class="t-cmd">get system status</span></p>
+              <p class="t-comment" data-es="# Configuración y diagnóstico de perimeter security" data-en="# Perimeter security configuration &amp; diagnostics"># Configuración y diagnóstico de perimeter security</p>
+            </div>
+
+            <!-- SOC -->
+            <div class="t-pane" id="pane-soc" role="tabpanel" aria-label="SOC" hidden>
+              <p class="t-line"><span class="t-prompt">soc@wazuh:~$</span> <span class="t-cmd">ioc-analysis --hashes --domains --ips</span></p>
+              <p class="t-line"><span class="t-prompt">soc@wazuh:~$</span> <span class="t-cmd">threat-detection --engine wazuh --mapping att&amp;ck</span></p>
+              <p class="t-line"><span class="t-prompt">soc@wazuh:~$</span> <span class="t-cmd">alert-triage --queue soc --priority high</span></p>
+              <p class="t-comment" data-es="# Flujo SOC · IOC Analysis / Threat Detection / Alert Triage" data-en="# SOC workflow · IOC Analysis / Threat Detection / Alert Triage"># Flujo SOC · IOC Analysis / Threat Detection / Alert Triage</p>
+            </div>
+
+            <!-- Linux -->
+            <div class="t-pane" id="pane-linux" role="tabpanel" aria-label="Linux" hidden>
+              <p class="t-line"><span class="t-prompt">kali@lab:~$</span> <span class="t-cmd">journalctl -u ssh --since "today"</span></p>
+              <p class="t-line"><span class="t-prompt">kali@lab:~$</span> <span class="t-cmd">ss -tunap</span></p>
+              <p class="t-line"><span class="t-prompt">kali@lab:~$</span> <span class="t-cmd">tcpdump -i eth0 -nn port 443</span></p>
+              <p class="t-comment" data-es="# Monitoreo y análisis de tráfico en Linux" data-en="# Linux monitoring &amp; traffic analysis"># Monitoreo y análisis de tráfico en Linux</p>
+            </div>
+
+            <div class="t-cursor-line" aria-hidden="true"><span class="typing-cursor">▍</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================= CONTACTO ============================= -->
+    <section id="contact" class="section contact">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="kicker mono">// 09 · CONTACTO</span>
+          <h2 data-es="¿Trabajamos juntos?" data-en="Let's work together">¿Trabajamos juntos?</h2>
+          <p class="section-sub" data-es="Disponible para roles en SOC, IAM, infraestructura y gestión de vulnerabilidades." data-en="Available for roles across SOC, IAM, infrastructure and vulnerability management.">Disponible para roles en SOC, IAM, infraestructura y gestión de vulnerabilidades.</p>
+        </header>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:alexalcivarm@hotmail.com" data-reveal>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <span class="contact-label" data-es="Correo" data-en="Email">Correo</span>
+            <span class="contact-value">alexalcivarm@hotmail.com</span>
+            <span class="contact-arrow mono" aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-card" href="https://www.linkedin.com/in/alexalcivarm7" target="_blank" rel="noopener" data-reveal>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+            </span>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">/in/alexalcivarm7</span>
+            <span class="contact-arrow mono" aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-card" href="https://github.com/alexalcivarm7" target="_blank" rel="noopener" data-reveal>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </span>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">@alexalcivarm7</span>
+            <span class="contact-arrow mono" aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-card" href="https://www.credly.com/users/alexalcivarm7/badges" target="_blank" rel="noopener" data-reveal>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.89"/>
+              </svg>
+            </span>
+            <span class="contact-label">Credly</span>
+            <span class="contact-value">alexalcivarm7<span class="mono">/badges</span></span>
+            <span class="contact-arrow mono" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Referencias profesionales (nombre y cargo) -->
+        <div class="references" data-reveal>
+          <h3 class="mono" data-es="// Referencias Profesionales" data-en="// Professional References">// Referencias Profesionales</h3>
+          <p class="ref-note" data-es="Referencias disponibles a solicitud." data-en="References available upon request.">Referencias disponibles a solicitud.</p>
+          <div class="ref-grid">
+            <div class="ref-card">
+              <span class="led led-green" aria-hidden="true"></span>
+              <div>
+                <strong>Ing. Bryan Leandro Solís Angulo</strong>
+                <span data-es="Cyber Security Engineer — Banco Guayaquil" data-en="Cyber Security Engineer — Banco Guayaquil">Cyber Security Engineer — Banco Guayaquil</span>
+              </div>
+            </div>
+            <div class="ref-card">
+              <span class="led led-green" aria-hidden="true"></span>
+              <div>
+                <strong>Mgtr. Javier Enrique Naranjo Guzmán</strong>
+                <span data-es="Jefe de Ciberseguridad — Almacenes De Prati S.A." data-en="Head of Cybersecurity — Almacenes De Prati S.A.">Jefe de Ciberseguridad — Almacenes De Prati S.A.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-top">
+        <a href="#hero" class="brand">
+          <span class="brand-mark" aria-hidden="true">AV</span>
+          <span class="brand-name">alexalcivar<span class="brand-accent">.sec</span></span>
+        </a>
+        <p class="footer-phrase mono">Build. Break. Detect. Learn. Automate. Lead.</p>
+        <ul class="footer-links">
+          <li><a href="#about" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
+          <li><a href="#experience" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
+          <li><a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+          <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Alex Vicente Alcivar Moya — Guayaquil, Ecuador</p>
+        <p class="footer-made mono" data-es="Construido con HTML, CSS y JavaScript puro · Sin frameworks" data-en="Built with pure HTML, CSS and JavaScript · No frameworks">Construido con HTML, CSS y JavaScript puro · Sin frameworks</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Botón volver arriba -->
+  <button type="button" id="back-to-top" data-es-aria="Volver arriba" data-en-aria="Back to top" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

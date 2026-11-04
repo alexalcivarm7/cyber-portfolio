@@ -14,6 +14,7 @@
    9.  Fallbacks de imagen (foto y badges Credly)
    10. Descargar CV PDF vía window.print()
    11. Botón volver arriba y año dinámico
+   12. Lightbox — visor de certificados de participación
    ========================================================================== */
 
 (function () {
@@ -406,6 +407,117 @@
   const yearSpan = $('#year');
   if (yearSpan) {
     yearSpan.textContent = String(new Date().getFullYear());
+  }
+
+  /* ==================================================================
+     12. LIGHTBOX — VISOR DE CERTIFICADOS DE PARTICIPACIÓN
+     Los botones .cert-thumb exponen data-full y los captions
+     data-es-caption / data-en-caption. El caption usa atributos
+     data-es / data-en para que setLang() lo actualice en vivo.
+  ================================================================== */
+  const lightbox  = $('#lightbox');
+  const certThumbs = $$('.cert-thumb');
+
+  if (lightbox && certThumbs.length) {
+    const lbImg      = $('.lb-img', lightbox);
+    const lbCaption  = $('.lb-caption', lightbox);
+    const lbCounter  = $('.lb-counter', lightbox);
+    const lbFallback = $('.lb-fallback', lightbox);
+    const lbClose    = $('.lb-close', lightbox);
+    const lbPrev     = $('.lb-prev', lightbox);
+    const lbNext     = $('.lb-next', lightbox);
+
+    let lbIndex = 0;
+    let lbReturnFocus = null;
+
+    function lbIsOpen() {
+      return !lightbox.hidden;
+    }
+
+    /** Pinta en el visor el certificado lbIndex */
+    function lbRender() {
+      const thumb = certThumbs[lbIndex];
+      if (!thumb) return;
+
+      const src = thumb.dataset.full || '';
+      const gridImg = $('img', thumb);
+
+      // Reinicia el estado del visor y carga la imagen ampliada
+      lbImg.hidden = false;
+      if (lbFallback) lbFallback.hidden = true;
+      lbImg.src = src;
+      lbImg.alt = gridImg ? gridImg.alt : '';
+
+      // Caption bilingüe: atributos data-es / data-en para setLang()
+      const esCap = thumb.dataset.esCaption || '';
+      const enCap = thumb.dataset.enCaption || esCap;
+      lbCaption.setAttribute('data-es', esCap);
+      lbCaption.setAttribute('data-en', enCap);
+      lbCaption.textContent = html.getAttribute('data-lang') === 'en' ? enCap : esCap;
+
+      if (lbCounter) {
+        lbCounter.textContent = (lbIndex + 1) + ' / ' + certThumbs.length;
+      }
+    }
+
+    function lbOpen(index) {
+      lbIndex = index;
+      lbReturnFocus = document.activeElement;
+      lbRender();
+      lightbox.hidden = false;
+      document.body.classList.add('lb-open');
+      if (lbClose) lbClose.focus();
+    }
+
+    function lbCloseFn() {
+      if (!lbIsOpen()) return;
+      lightbox.hidden = true;
+      document.body.classList.remove('lb-open');
+      if (lbReturnFocus && typeof lbReturnFocus.focus === 'function') {
+        lbReturnFocus.focus();
+      }
+    }
+
+    function lbStep(dir) {
+      lbIndex = (lbIndex + dir + certThumbs.length) % certThumbs.length;
+      lbRender();
+    }
+
+    // Apertura desde la galería
+    certThumbs.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => lbOpen(i));
+    });
+
+    // Controles del visor
+    if (lbClose) lbClose.addEventListener('click', lbCloseFn);
+    if (lbPrev) lbPrev.addEventListener('click', () => lbStep(-1));
+    if (lbNext) lbNext.addEventListener('click', () => lbStep(1));
+
+    // Clic en el fondo (backdrop) cierra
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox || e.target.classList.contains('lb-backdrop')) {
+        lbCloseFn();
+      }
+    });
+
+    // Teclado: Escape cierra, flechas navegan
+    document.addEventListener('keydown', e => {
+      if (!lbIsOpen()) return;
+      if (e.key === 'Escape') lbCloseFn();
+      else if (e.key === 'ArrowLeft') lbStep(-1);
+      else if (e.key === 'ArrowRight') lbStep(1);
+    });
+
+    // Si la imagen ampliada falla, muestra el icono de medalla
+    if (lbImg && lbFallback) {
+      lbImg.addEventListener('error', () => {
+        lbImg.hidden = true;
+        lbFallback.hidden = false;
+      });
+    }
+
+    // No imprimir con el visor abierto
+    window.addEventListener('beforeprint', lbCloseFn);
   }
 
   /* ------------------------------------------------------------------
